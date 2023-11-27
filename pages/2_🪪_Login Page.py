@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from streamlit_option_menu import option_menu
 from datetime import datetime
 class LoginUser:
 
@@ -40,29 +39,9 @@ class LoginUser:
             st.session_state.username = self.name
             st.rerun()
         
-    def streamlit_menu(self):
-        selected = option_menu(
-            menu_title=None,
-            options =["Masuk","Registrasi"],
-            icons=['box-arrow-in-right','person'],
-            default_index =0,
-            orientation = "horizontal",
-            styles={
-                    "container": {"padding": "0!important", "background-color": "#eeee" },
-                    "icon": {"color": "black", "font-size": "19px"},
-                    "nav-link": {
-                        "font-size": "15px",
-                        "text-align": "left",
-                        "margin": "0px",
-                        "--hover-color": "grey",
-                    },
-                    "nav-link-selected": {"background-color": "#3FBAD8"},
-                },
-            )
-        return selected
     
     def buat_form(self):
-        menu = self.streamlit_menu()
+        menu = st.selectbox("Opsi",("Masuk","Registrasi"))
         if menu == "Registrasi":
             InputName = st.text_input("Nama Lengkap")
             Inputdate = st.text_input("Tanggal Lahir (DD/MM/YYYY)")

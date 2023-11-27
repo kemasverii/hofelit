@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
+
 
 
 class Komunitas:
@@ -31,27 +31,8 @@ else:
     st.markdown("<h1 class='centered-title'>Hofelit Community</h1>", unsafe_allow_html=True)
 
 
-    def streamlit_menu():
-        selected = option_menu(
-            menu_title=None,
-            options =["Tambah Post","Post"],
-            icons=['plus-square','chat-right-dots'],
-            default_index =0,
-            orientation = "horizontal",
-            styles={
-                    "container": {"padding": "0!important", "background-color": "#fafafa"},
-                    "icon": {"color": "black", "font-size": "19px"},
-                    "nav-link": {
-                        "font-size": "15px",
-                        "text-align": "left",
-                        "margin": "0px",
-                        "--hover-color": "#eee",
-                    },
-                    "nav-link-selected": {"background-color": "#3FBAD8"},
-                },
-            )
-        return selected
-    menu = streamlit_menu()
+
+    menu = st.selectbox("Menu",("Tambah Post","Post"))
 
     # Tambah Post
     if menu == "Tambah Post":

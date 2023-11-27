@@ -1,34 +1,12 @@
 import streamlit as st
-
-from streamlit_option_menu import option_menu
 st.set_page_config(
     page_title="HofeliT",
     page_icon="logo.png"
 )
 logo = "logo.png"  
 st.image(logo,use_column_width="auto",width=200)
-def streamlit_menu():
-    selected = option_menu(
-        menu_title=None,
-        options =["Home","How To Use","About Us"],
-        icons=['house-door','hand-index','people-fill'],
-        default_index =0,
-        orientation = "horizontal",
-        styles={
-                "container": {"padding": "0!important", "background-color": "#fafafa"},
-                "icon": {"color": "black", "font-size": "19px"},
-                "nav-link": {
-                    "font-size": "15px",
-                    "text-align": "left",
-                    "margin": "0px",
-                    "--hover-color": "#eee",
-                },
-                "nav-link-selected": {"background-color": "#3FBAD8"},
-            },
-        )
-    return selected
 
-menu = streamlit_menu()
+menu = st.selectbox("Menu",("Home","How To Use","About Us"))
 
 if menu == "Home":
     def home_page ():

@@ -2,8 +2,6 @@ import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime
-from streamlit_option_menu import option_menu
-
 
 class Quiz:
     def __init__(self, pertanyaan,username):
@@ -181,29 +179,10 @@ class Quiz:
                             
                         """
                 )
-    def streamlit_menu(self):
-        selected = option_menu(
-            menu_title=None,
-            options =["Parameter","Saran"],
-            icons=['speedometer2','ui-checks'],
-            default_index =0,
-            orientation = "horizontal",
-            styles={
-                    "container": {"padding": "0!important", "background-color": "#eeee" },
-                    "icon": {"color": "black", "font-size": "19px"},
-                    "nav-link": {
-                        "font-size": "15px",
-                        "text-align": "left",
-                        "margin": "0px",
-                        "--hover-color": "grey",
-                    },
-                    "nav-link-selected": {"background-color": "#3FBAD8"},
-                },
-            )
-        return selected
+
     
     def pilihan(self, poin):
-        hasil = self.streamlit_menu()
+        hasil = st.selectbox("Menu",("Parameter","Saran"))
         if self.submitted:
             st.title("Hasil Quiz:")
             st.header(f"Poin Anda: {poin: .1f}")

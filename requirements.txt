@@ -1,5 +1,4 @@
-streamlit
-pandas
-plotly==4.14.3
-streamlit_option_menu
-datetime
+streamlit==1.28.1
+streamlit-option-menu == 0.3.6
+pandas == 2.1.1
+plotly == 5.18.0

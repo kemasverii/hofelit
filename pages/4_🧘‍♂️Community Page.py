@@ -59,8 +59,11 @@ else:
         pengirim_post = st.text_input("Nama Pengirim (Anonim)", )
         isi_post = st.text_area("Isi Post")
         if st.button("Kirim Post"):
-            st.session_state.komunitas_hofelit.tambah_post(pengirim_post, isi_post)
-            st.success("Post berhasil ditambahkan!")
+            if  pengirim_post.strip() and isi_post.strip():
+                st.session_state.komunitas_hofelit.tambah_post(pengirim_post, isi_post)
+                st.success("Post berhasil ditambahkan!")
+            else:
+                st.warning("Isi Post tidak boleh kosong. Silakan tulis sesuatu sebelum menyimpan.")
 
     # Tampilkan Post
     elif menu == "Post":

@@ -36,7 +36,7 @@ if menu == "Home":
         st.header("Apa itu HofeliT ?")
         st.markdown('<div style="text-align: justify;">Hofelit dibuat untuk mengetahui rate tentang suasana hati. Hadirnya Hofelit diharapkan membantu teman-teman untuk memeriksa bagaimana, kesehatan mental yang selama ini teman-teman rasakan.</div>', unsafe_allow_html=True)
         st.header("Bagaimana Kerja Hofelit ?")
-        st.markdown('<div style="text-align: justify;">Hofelit dibuat untuk mencari rate tentang suansana hati, maka dari itu kami mengembangkan sistem yang kami buat untuk mengetahui sejauh mana mental health teman-teman yang akan diukur. Dengan begitu nilai yang telah dikumpulkan setelah mengerjakan kuis(soal) akan menjadi acuan untuk teman-teman mengambil keputusan terhadap mental health teman-teman sendiri.</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: justify;">Hofelit dibuat untuk mencari rate tentang suansana hati, maka dari itu kami mengembangkan sistem untuk mengetahui sejauh mana mental health teman-teman yang akan diukur. Dengan begitu poin yang telah dikumpulkan setelah menjawab pertanyaan, akan menjadi acuan untuk teman-teman mengambil keputusan terhadap mental health teman-teman.</div>', unsafe_allow_html=True)
         st.write(""" """)
         st.markdown("""
                     
@@ -60,7 +60,7 @@ elif menu == "About Us":
         st.markdown(""" 
                     Sebagai : Lead Project
 
-                    Fun Fact : makannya banyak
+                    Fun Fact : Makannya cepet, kayak dikejar hutang
 
                     Motto Hidup : do it like you dream it
 
@@ -73,7 +73,7 @@ elif menu == "About Us":
         st.markdown(""" 
                     Sebagai : Editor
 
-                    Fun Fact : Kalau makan cepet, kek orang dikejer utang
+                    Fun Fact : Suka vlog masak
 
                     Motto Hidup : do it like you dream it
 

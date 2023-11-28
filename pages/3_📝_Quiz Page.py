@@ -50,10 +50,8 @@ class Quiz:
                             'pertanyaan 10': [jawaban[9]],
                             'tanggal_waktu': [self.waktu()]})
         if self.username in data_jawaban['username'].values:
-
             data_jawaban = pd.concat([data_jawaban,df_jawaban], ignore_index=True)
         else:
-        
             data_jawaban = pd.concat([data_jawaban, df_jawaban], ignore_index=True)
         data_jawaban.to_csv("jawaban_user.csv",index=False)
 
@@ -234,7 +232,6 @@ class Quiz:
                     "<h1 class='centered-title'>Anda sedang stress</h1>",
                     unsafe_allow_html=True,
                 )
-
             
             if hasil== "Parameter":
                 self.chart(poin)
@@ -277,13 +274,13 @@ if "isverif" not in st.session_state or st.session_state.isverif == False:
 
     1. Menjawab soal dengan jujur dan kemauan sendiri.
 
-    2. Jangan cemas ya gaiss, karena apapun yang kamu dapatkan hasilnya, dapat membantu diri menjadi lebih baik.
+    2. Jangan merasa cemas teman - teman , karena apapun yang kamu dapatkan hasilnya, dapat membantu teman-teman menjadi lebih baik.
 
-    3. Jangan terburu-buru ngerjainnya.
+    3. Jangan terburu-buru dalam pengisian jawaban.
 
-    4. Jawaban harus diisi terlebih dahulu dan jangan lupa untuk submit yaa.
+    4. Jawaban harus diisi terlebih dahulu dan jangan lupa untuk submit.
 
-    5. Semangat, kamu pasti orang hebat dan kuat yang bisa bertahan selama ini !!!
+    5. Semangat !!! teman - teman adalah orang hebat dan kuat yang bisa bertahan selama ini.
     """
     st.markdown(multi)
 else:

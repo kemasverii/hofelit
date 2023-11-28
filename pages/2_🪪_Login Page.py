@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
 from datetime import datetime
-class LoginUser:
 
+class LoginUser:
     def __init__(self):
         self.username = None
         

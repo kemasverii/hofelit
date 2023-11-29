@@ -6,54 +6,64 @@ from streamlit_option_menu import option_menu
 
 
 class Quiz:
-    def __init__(self, pertanyaan,username):
+    def __init__(self, pertanyaan, username):
         self.pertanyaan = pertanyaan
         self.username = username
         self.jawaban = []
         self.submitted = False
         # Display the questions and get the user's answers
+
     def lihat_jawaban(self):
         respon_user = pd.read_csv("jawaban_user.csv")
         return respon_user
-    
+
     def waktu(self):
         waktu_sekarang = datetime.now()
         return waktu_sekarang
-    
-    def jawaban_user(self,username,jawaban):
+
+    def jawaban_user(self, username, jawaban):
         try:
             data_jawaban = pd.read_csv("jawaban_user.csv")
         except FileNotFoundError:
-            data_jawaban = pd.DataFrame(columns=['username',
-                            'pertanyaan 1',
-                            'pertanyaan 2',
-                            'pertanyaan 3',
-                            'pertanyaan 4',
-                            'pertanyaan 5',
-                            'pertanyaan 6',
-                            'pertanyaan 7',
-                            'pertanyaan 8',
-                            'pertanyaan 9',
-                            'pertanyaan 10',
-                            'tanggal_waktu'])
-        df_jawaban = pd.DataFrame({
-                            'username':[username],
-                            'pertanyaan 1': [jawaban[0]],
-                            'pertanyaan 2': [jawaban[1]],
-                            'pertanyaan 3': [jawaban[2]],
-                            'pertanyaan 4': [jawaban[3]],
-                            'pertanyaan 5': [jawaban[4]],
-                            'pertanyaan 6': [jawaban[5]],
-                            'pertanyaan 7': [jawaban[6]],
-                            'pertanyaan 8': [jawaban[7]],
-                            'pertanyaan 9': [jawaban[8]],
-                            'pertanyaan 10': [jawaban[9]],
-                            'tanggal_waktu': [self.waktu()]})
-        if self.username in data_jawaban['username'].values:
-            data_jawaban = pd.concat([data_jawaban,df_jawaban], ignore_index=True)
+            data_jawaban = pd.DataFrame(
+                columns=[
+                    "username",
+                    "pertanyaan 1",
+                    "pertanyaan 2",
+                    "pertanyaan 3",
+                    "pertanyaan 4",
+                    "pertanyaan 5",
+                    "pertanyaan 6",
+                    "pertanyaan 7",
+                    "pertanyaan 8",
+                    "pertanyaan 9",
+                    "pertanyaan 10",
+                    "rata_rata_jawaban",
+                    "tanggal_waktu",
+                ]
+            )
+        df_jawaban = pd.DataFrame(
+            {
+                "username": [username],
+                "pertanyaan 1": [jawaban[0]],
+                "pertanyaan 2": [jawaban[1]],
+                "pertanyaan 3": [jawaban[2]],
+                "pertanyaan 4": [jawaban[3]],
+                "pertanyaan 5": [jawaban[4]],
+                "pertanyaan 6": [jawaban[5]],
+                "pertanyaan 7": [jawaban[6]],
+                "pertanyaan 8": [jawaban[7]],
+                "pertanyaan 9": [jawaban[8]],
+                "pertanyaan 10": [jawaban[9]],
+                "rata_rata_jawaban": [self.hasil()],
+                "tanggal_waktu": [self.waktu()],
+            }
+        )
+        if self.username in data_jawaban["username"].values:
+            data_jawaban = pd.concat([data_jawaban, df_jawaban], ignore_index=True)
         else:
             data_jawaban = pd.concat([data_jawaban, df_jawaban], ignore_index=True)
-        data_jawaban.to_csv("jawaban_user.csv",index=False)
+        data_jawaban.to_csv("jawaban_user.csv", index=False)
 
     def soal(self):
         for i, pertanyaan_item in enumerate(self.pertanyaan):
@@ -71,6 +81,7 @@ class Quiz:
                 self.jawaban.append(hasil)
         self.submit_button()
 
+
     def submit_button(self):
         klik = st.button("Submit")
         if klik:
@@ -79,17 +90,17 @@ class Quiz:
             elif len(self.jawaban) == len(self.pertanyaan):
                 st.session_state.issubmit = True
                 self.submitted = True
-                self.jawaban_user(self.username,self.jawaban)
+                self.jawaban_user(self.username, self.jawaban)
             else:
                 st.warning("Isi Jawaban dengan Benar!")
             if "issubmit" in st.session_state and st.session_state.issubmit:
                 st.success("Jawaban Anda telah disubmit!")
-            # Menampilkan respon hanya setelah tombol "Submit" ditekan
+            
+
 
     def hasil(self):
         rata_rata = sum(self.jawaban) / len(self.pertanyaan)
         return rata_rata
-
 
     def chart(self, poin):
         if poin >= 1:
@@ -179,27 +190,28 @@ class Quiz:
                             
                         """
                 )
+
     def streamlit_menu(self):
         selected = option_menu(
             menu_title=None,
-            options =["Parameter","Saran"],
-            icons=['speedometer2','ui-checks'],
-            default_index =0,
-            orientation = "horizontal",
+            options=["Parameter", "Saran"],
+            icons=["speedometer2", "ui-checks"],
+            default_index=0,
+            orientation="horizontal",
             styles={
-                    "container": {"padding": "0!important", "background-color": "#eeee" },
-                    "icon": {"color": "black", "font-size": "19px"},
-                    "nav-link": {
-                        "font-size": "15px",
-                        "text-align": "left",
-                        "margin": "0px",
-                        "--hover-color": "grey",
-                    },
-                    "nav-link-selected": {"background-color": "#3FBAD8"},
+                "container": {"padding": "0!important", "background-color": "#eeee"},
+                "icon": {"color": "black", "font-size": "19px"},
+                "nav-link": {
+                    "font-size": "15px",
+                    "text-align": "left",
+                    "margin": "0px",
+                    "--hover-color": "grey",
                 },
-            )
+                "nav-link-selected": {"background-color": "#3FBAD8"},
+            },
+        )
         return selected
-    
+
     def pilihan(self, poin):
         hasil = self.streamlit_menu()
         if self.submitted:
@@ -232,8 +244,8 @@ class Quiz:
                     "<h1 class='centered-title'>Anda sedang stress</h1>",
                     unsafe_allow_html=True,
                 )
-            
-            if hasil== "Parameter":
+
+            if hasil == "Parameter":
                 self.chart(poin)
             elif hasil == "Saran":
                 self.saran(poin)
@@ -248,19 +260,17 @@ class Quiz:
                     )
 
 
-
-
 pertanyaan = [
-    "Apakah anda merasa tidak baik-baik saja selama ini?",
-    "Apa kamu merasa percaya diri dengan semua kondisimu sekarang?",
-    "Pernahkah Anda merasa dipengaruhi oleh perasaan gelisah, cemas, atau gugup?",
-    "Seberapa sering Anda merasa terganggu karena tidak bisa berhenti khawatir?",
-    "Apakah kamu hobi bepergian dengan teman?",
+    "Apakah Anda merasa tidak baik-baik saja selama ini?",
+    "Apakah Anda merasa tidak percaya diri dengan semua Anda sekarang?",
+    "Apakah Anda merasa dipengaruhi oleh perasaan gelisah, cemas, atau gugup?",
+    "Apakah Anda sering merasa terganggu karena tidak bisa berhenti khawatir?",
+    "Apakah Anda tidak hobi bepergian dengan teman Anda?",
     "Apakah kamu lebih suka menyendiri daripada bermain bareng teman-teman?",
     "Apakah perasaan cemas atau tidak nyaman di sekitar orang lain mengganggu Anda?",
     "Pernahkah Anda mengalami penurunan minat terhadap aktivitas yang biasanya Anda nikmati selama seminggu atau lebih? Contohnya mungkin termasuk pekerjaan, olahraga, atau hobi.",
-    "Apakah kamu merasa sangat lelah dan tidak ingin bersosialisasi?",
-    "Apakah kamu sering berdiam diri karena merasa stress dan penat?",
+    "Apakah Anda merasa sangat lelah dan tidak ingin bersosialisasi?",
+    "Apakah Anda sering berdiam diri karena merasa stress dan penat?",
 ]
 st.markdown(
     """<style>.centered-title {text-align: center;}</style>""", unsafe_allow_html=True
@@ -274,13 +284,13 @@ if "isverif" not in st.session_state or st.session_state.isverif == False:
 
     1. Menjawab soal dengan jujur dan kemauan sendiri.
 
-    2. Jangan merasa cemas teman - teman , karena apapun yang kamu dapatkan hasilnya, dapat membantu teman-teman menjadi lebih baik.
+    2. Jangan khawatir dengan pengisian kuisioner, karena hasil kuisioner ini diharapkan dapat membantu menjaga mental health Anda menjadi lebih baik.
 
     3. Jangan terburu-buru dalam pengisian jawaban.
 
     4. Jawaban harus diisi terlebih dahulu dan jangan lupa untuk submit.
 
-    5. Semangat !!! teman - teman adalah orang hebat dan kuat yang bisa bertahan selama ini.
+    5. Semangat !!! Anda adalah orang hebat dan kuat yang bisa bertahan selama ini.
     """
     st.markdown(multi)
 else:
@@ -290,7 +300,7 @@ else:
     )
     st.markdown("<h1 class='centered-title'>Hofelit</h1>", unsafe_allow_html=True)
     username = st.session_state.username
-    quiz = Quiz(pertanyaan,username)
+    quiz = Quiz(pertanyaan, username)
     quiz.soal()
     poin = quiz.hasil()
     quiz.pilihan(poin)

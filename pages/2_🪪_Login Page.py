@@ -65,7 +65,7 @@ class LoginUser:
         menu = self.streamlit_menu()
         if menu == "Registrasi":
             InputName = st.text_input("Nama Lengkap")
-            Inputdate = st.text_input("Tanggal Lahir (DD/MM/YYYY)")
+            Inputdate = st.text_input("Tanggal Lahir (DD-MM-YYYY)",)
         InputUsername = st.text_input("Username")
         InputPassword = st.text_input("Password", type="password")
 

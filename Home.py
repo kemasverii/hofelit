@@ -35,9 +35,13 @@ menu = streamlit_menu()
 if menu == "Home":
     def home_page ():
         st.header("Apa itu Mental Health ?")
-        st.markdown('<div style="text-align: justify;">Mental Health adalah keadaan dimana individu memiliki kemampuan untuk berkembang secara fisik, mental, spiritual, dan sosial sehingga dapat mengetahui kemampuan diri, dapat menghadapi tantangan hidup, dapat belajar dan melakukan pekerjaan dengan baik, dan dapat memberikan kontribusi bagi masyarakat sekitar.</div>', unsafe_allow_html=True)
+        st.markdown("""<div style="text-align: justify;">Mental Health adalah keadaan dimana individu memiliki kemampuan untuk berkembang secara fisik, 
+                    mental, spiritual, dan sosial sehingga dapat mengetahui kemampuan diri, dapat menghadapi tantangan hidup, 
+                    dapat belajar dan melakukan pekerjaan dengan baik, dan dapat memberikan kontribusi bagi masyarakat sekitar.</div>""", unsafe_allow_html=True)
         st.write(""" """)
-        st.markdown('<div style="text-align: justify;">Perlu Anda ketahui bahwa peristiwa dalam hidup yang berdampak besar pada kepribadian dan perilaku seseorang bisa berpengaruh pada kesehatan mentalnya. Akan tetapi, masalah kesehatan mental bisa mengubah cara seseorang dalam mengatasi stres, berhubungan dengan orang lain, membuat pilihan, dan memicu hasrat untuk menyakiti diri sendiri.</div>', unsafe_allow_html=True)
+        st.markdown("""<div style="text-align: justify;">Perlu Anda ketahui bahwa peristiwa dalam hidup yang berdampak besar pada kepribadian 
+                    dan perilaku seseorang bisa berpengaruh pada kesehatan mentalnya. Akan tetapi, masalah kesehatan mental bisa mengubah cara seseorang dalam mengatasi stres,
+                    berhubungan dengan orang lain, membuat pilihan, dan memicu hasrat untuk menyakiti diri sendiri.</div>""", unsafe_allow_html=True)
         st.write(""" """)
         st.header("Gangguan Mental Health")
         st.markdown(""" 
@@ -201,11 +205,18 @@ elif menu == "How To Use":
         st.write(""" """)
         st.write()
         st.header("Apa itu HofeliT ?")
-        st.markdown('<div style="text-align: justify;">Apakah Anda tahu? 1 dari 5 anak-anak dan remaja di dunia mengidap gangguan jiwa? dan apakah anda tahu bahwa 1 dari 9 orang yang tinggal di lingkugan penuh akan konflik memilki gangguan kejiwaan sedang hingga berat?dengan pernyataan yang telah disebutkan, membuat pertanyaa apakah hal tersebut dapat dikurangi atau bahkan dapat dihindari, sehingga kejadian seperti pernyataan diatas tidak terjadi pada Anda. Dengan itu hadirlah Hofelit untuk membantu mengatasi seputar Kesehatan Mental yang Anda alami.</div>', unsafe_allow_html=True)
+        st.markdown("""<div style="text-align: justify;">Apakah Anda tahu? 1 dari 5 anak-anak dan remaja di dunia mengidap gangguan jiwa? 
+                    dan apakah anda tahu bahwa 1 dari 9 orang yang tinggal di lingkugan penuh akan konflik memilki 
+                    gangguan kejiwaan sedang hingga berat?dengan pernyataan yang telah disebutkan, 
+                    membuat pertanyaa apakah hal tersebut dapat dikurangi atau bahkan dapat dihindari, 
+                    sehingga kejadian seperti pernyataan diatas tidak terjadi pada Anda. Dengan itu hadirlah Hofelit untuk membantu mengatasi seputar Kesehatan Mental yang Anda alami.</div>""", unsafe_allow_html=True)
         st.write(""" """)
-        st.markdown('<div style="text-align: justify;">Hofelit dibuat untuk mengetahui rate tentang keadaan mental health Anda. Hadirnya Hofelit diharapkan membantu Anda untuk memeriksa bagaimana, kesehatan mental yang selama ini teman-teman rasakan.</div>', unsafe_allow_html=True)
+        st.markdown("""<div style="text-align: justify;">Hofelit dibuat untuk mengetahui rate tentang keadaan mental health Anda. 
+                    Hadirnya Hofelit diharapkan membantu Anda untuk memeriksa bagaimana, kesehatan mental yang selama ini teman-teman rasakan.</div>""", unsafe_allow_html=True)
         st.write(""" """)
-        st.markdown('<div style="text-align: justify;">Maka dari itu kami mengembangkan sistem untuk mengetahui sejauh mana keadaan mental health Anda. Dengan begitu poin yang telah dikumpulkan setelah menjawab pertanyaan, akan menjadi acuan untuk mengambil keputusan terhadap keadaan mental health Anda.</div>', unsafe_allow_html=True)
+        st.markdown("""<div style="text-align: justify;">Maka dari itu kami mengembangkan sistem untuk mengetahui sejauh mana keadaan mental health Anda. 
+                    Dengan begitu poin yang telah dikumpulkan setelah menjawab pertanyaan, akan menjadi acuan untuk mengambil 
+                    keputusan terhadap keadaan mental health Anda.</div>""", unsafe_allow_html=True)
         st.write(""" """)
         st.markdown("""
                     

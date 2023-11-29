@@ -146,8 +146,7 @@ elif menu == "About Us":
         st.markdown("<h1 class='centered-title'>About Us</h1>", unsafe_allow_html=True)
         # Kemas
         st.subheader("Kemas Veriandra Ramadhan")
-        image1 = Image.open("foto\kemas.jpg")
-        st.image(image1, width=300, caption="Kemsky")
+        st.image("kemas.jpg", width=300, caption="Kemsky")
         st.markdown(""" 
                     Sebagai : Lead Project
 
@@ -160,8 +159,7 @@ elif menu == "About Us":
         st.write(" ")
         # Reynaldi
         st.subheader("Reynaldi Rahmad")
-        image2 = Image.open("foto\Rey.jpg")
-        st.image(image2, width=300, caption="rey/wir")
+        st.image("Rey.jpg", width=300, caption="rey/wir")
         st.markdown(""" 
                     Sebagai : Editor
 
@@ -173,8 +171,7 @@ elif menu == "About Us":
         st.write(" ")
         st.write(" ")
         st.subheader("Khaalishah Zuhrah Alyaa Vanefi")
-        image3 = Image.open("foto\Alya.jpg")
-        st.image(image3, width=300, caption="al/panepoy")
+        st.image("Alya.jpg", width=300, caption="al/panepoy")
         st.markdown("""
                     Sebagai : Desainer
 
@@ -187,8 +184,7 @@ elif menu == "About Us":
         st.write(" ")
         # Tessa
         st.subheader("Tessa Kania Sagala")
-        image4 = Image.open("foto\Tessa.jpg")
-        st.image(image4, width=300, caption="tes")
+        st.image("Tessa.jpg", width=300, caption="tes")
         st.markdown(""" 
                     Sebagai : Writer
 
@@ -221,46 +217,36 @@ elif menu == "How To Use":
         st.markdown("""<style>.centered-title {text-align: center;}</style>""",unsafe_allow_html=True)
         st.markdown("<h1 class='centered-title'>Cara Menggunakan HofeliT</h1>", unsafe_allow_html=True)
         st.markdown('<div style="text-align: justify;">1. Klik tombol Login Page pada sisi kiri Halaman.</div>', unsafe_allow_html=True)
-        image_n1 = Image.open("foto\htu\o1.jpg")
-        st.image(image_n1, caption="Step 1")
+        st.image("o1.jpg", caption="Step 1")
         st.write("")
 
         st.markdown('<div style="text-align: justify;">2. Apabila belum mempunyai akun, buat akun terlebih dahulu. Pilih menu Registrasi jika belum memiliki akun. Isi data yang diperlukan.</div>', unsafe_allow_html=True)
-        image_n2 = Image.open("foto\htu\o2.jpg")
-        st.image(image_n2, caption="Step 2")
+        st.image("o1.jpg", caption="Step 2")
         st.write("")
-        
-        
+
         st.markdown('<div style="text-align: justify;">3. Ketika selesai mengisi data tekan tombol registrasi untuk membuat akun. Tunggu Nontifikasi hijau muncul.</div>', unsafe_allow_html=True)
-        image_n3 = Image.open("foto\htu\o3.jpg")
-        st.image(image_n3, caption="Step 3")
+        st.image("o3.jpg", caption="Step 3")
         st.write("")
         
         st.markdown('<div style="text-align: justify;">4. Pilih menu Masuk,  kemudian masukkan Username dan Password yang telah dibuat.</div>', unsafe_allow_html=True)
-        image_n4 = Image.open("foto\htu\o4.jpg")
-        st.image(image_n4, caption="Step 4")
+        st.image("o4.jpg", caption="Step 4")
         st.write("")
 
         st.markdown('<div style="text-align: justify;">5. Setelah tampilan User Page muncul Quiz Page, Comunnity Page, dan Memo Page dapat digunakan. Ingat! ketiga page tersebut dapat diakses setelah berhasil masuk ke User Page .</div>', unsafe_allow_html=True)
-        image_n5 = Image.open("foto\htu\o5.jpg")
-        st.image(image_n5, caption="Step 5")
+        st.image("o5.jpg", caption="Step 5")
         st.write("")
 
         st.markdown('<div style="text-align: justify;">6. Tekan tombol Quiz Page pada sisi kiri untuk memulai quiz.</div>', unsafe_allow_html=True)
-        image_n6 = Image.open("foto\htu\o6.jpg")
-        st.image(image_n6, caption="Step 6")
+        st.image("o6.jpg", caption="Step 6")
         st.write("")
 
         st.markdown('<div style="text-align: justify;">7. Setelah mengisi jawaban dari soal yang diberikan, tekan tombol submit untuk melihat hasil akhir. Hasil akhir bisa dilihat dengan 2 output, yaitu Paramter dan saran. Untuk mengganti output tekan output yang diinginkan. Ketika berganti output, pastikan tombol submit ditekan kembali untuk melihat hasilnya.</div>', unsafe_allow_html=True)
-        image_n71 = Image.open("foto\htu\o71.jpg")
-        image_n72 = Image.open("foto\htu\o72.jpg")
-        st.image(image_n71)
-        st.image(image_n72,caption='Step 7')
+        st.image("o71.jpg")
+        st.image("o72.jpg",caption='Step 7')
         st.write("")
 
         st.markdown('<div style="text-align: justify;">8. Ketika sudah selesai menggunakan Hofelit, kembali ke Login Page lalu tekan tombol Keluar untuk keluar dari akun yang digunakan.</div>', unsafe_allow_html=True)
-        image_n8 = Image.open("foto\htu\o8.jpg")
-        st.image(image_n8, caption="Step3")
+        st.image("o8.jpg", caption="Step3")
         st.write("")
     How_to_Use()
         

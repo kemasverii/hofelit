@@ -5,7 +5,7 @@ import pandas as pd
 class Admin:
     def __init__(self):
         self.data = None
-        self.admin = ["kemasverii","jukai",'tessa28','Alyaa']
+        self.admin = ["kemasverii","aldi",'tessa28','Alyaa']
         self.password = "admin1"
 
     def baca_data(self):

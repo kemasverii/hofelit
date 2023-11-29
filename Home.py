@@ -75,7 +75,7 @@ elif menu == "About Us":
 
                     Fun Fact : Suka vlog masak
 
-                    Motto Hidup : do it like you dream it
+                    Motto Hidup : Makin gede makin yaudah
 
                     """)
         st.write(" ")

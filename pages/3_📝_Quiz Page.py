@@ -69,7 +69,7 @@ class Quiz:
         for i, pertanyaan_item in enumerate(self.pertanyaan):
             # Display "Yes" and "No" options
             user_choice = st.radio(
-                f"Pertanyaan {i + 1}: {pertanyaan_item} (1 = Rendah, 10 = Tinggi) ",
+                f"Pertanyaan {i + 1}: {pertanyaan_item} (1 = Rendah, 5 = Sedang, 10 = Tinggi) ",
                 ["Ya", "Tidak"],
             )
             if user_choice == "Ya":

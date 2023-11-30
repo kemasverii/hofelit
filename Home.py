@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 from streamlit_option_menu import option_menu
 st.set_page_config(
@@ -207,9 +206,9 @@ elif menu == "How To Use":
         st.header("Apa itu HofeliT ?")
         st.markdown("""<div style="text-align: justify;">Apakah Anda tahu? 1 dari 5 anak-anak dan remaja di dunia mengidap gangguan jiwa? 
                     dan apakah anda tahu bahwa 1 dari 9 orang yang tinggal di lingkugan penuh akan konflik memilki 
-                    gangguan kejiwaan sedang hingga berat?dengan pernyataan yang telah disebutkan, 
+                    gangguan kejiwaan sedang hingga berat? dengan pernyataan yang telah disebutkan, 
                     membuat pertanyaa apakah hal tersebut dapat dikurangi atau bahkan dapat dihindari, 
-                    sehingga kejadian seperti pernyataan diatas tidak terjadi pada Anda. Dengan itu hadirlah Hofelit untuk membantu mengatasi seputar Kesehatan Mental yang Anda alami.</div>""", unsafe_allow_html=True)
+                    sehingga kejadian seperti pernyataan diatas tidak terjadi pada Anda. Dengan itu hadirlah Hofelit untuk membantu mengatasi seputar kesehatan mental yang Anda alami.</div>""", unsafe_allow_html=True)
         st.write(""" """)
         st.markdown("""<div style="text-align: justify;">Hofelit dibuat untuk mengetahui rate tentang keadaan mental health Anda. 
                     Hadirnya Hofelit diharapkan membantu Anda untuk memeriksa bagaimana, kesehatan mental yang selama ini teman-teman rasakan.</div>""", unsafe_allow_html=True)

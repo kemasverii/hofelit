@@ -226,7 +226,8 @@ elif menu == "How To Use":
                     """)
         st.markdown("""<style>.centered-title {text-align: center;}</style>""",unsafe_allow_html=True)
         st.markdown("<h1 class='centered-title'>Cara Menggunakan HofeliT</h1>", unsafe_allow_html=True)
-        st.markdown('<div style="text-align: justify;">1. Klik tombol Login Page pada sisi kiri Halaman.</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: justify;">1. Klik tombol panah pada bagaian kiri atas, kemudian tekan Login Page untuk masuk.</div>', unsafe_allow_html=True)
+        st.image("o11.jpg")
         st.image("o1.jpg", caption="Step 1")
         st.write("")
 

@@ -5,6 +5,7 @@ st.set_page_config(
     page_title="HofeliT",
     page_icon="logo.png"
 )
+st.header("Welcome Home Gais")
 
 logo = "logo.png"  
 st.image(logo,use_column_width="auto",width=200)
